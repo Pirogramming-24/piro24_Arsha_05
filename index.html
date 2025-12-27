@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsha - Bootstrap Template Clone</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="sections/01-hero.css">
+    <link rel="stylesheet" href="sections/02-clients.css">
+    <link rel="stylesheet" href="sections/03-about.css">
+    <link rel="stylesheet" href="sections/04-services.css">
+    <link rel="stylesheet" href="sections/05-work-process.css">
+    <link rel="stylesheet" href="sections/06-cta.css">
+    <link rel="stylesheet" href="sections/07-portfolio.css">
+    <link rel="stylesheet" href="sections/08-team.css">
+    <link rel="stylesheet" href="sections/09-pricing.css">
+    <link rel="stylesheet" href="sections/10-testimonials.css">
+    <link rel="stylesheet" href="sections/11-faq.css">
+    <link rel="stylesheet" href="sections/12-newsletter.css">
+    <link rel="stylesheet" href="sections/13-blog.css">
+    <link rel="stylesheet" href="sections/14-contact.css">
+</head>
+<body class="index-page">
+    <!-- CSS-only View Control Inputs -->
+    <input type="radio" name="view-mode" id="mode-desktop" checked hidden>
+    <input type="radio" name="view-mode" id="mode-tablet" hidden>
+    <input type="radio" name="view-mode" id="mode-mobile" hidden>
+
+    <!-- Demo Header -->
+    <header id="demo-header">
+        <div class="demo-logo">
+            <a href="index.html">
+                <img src="css/img/logo.png" alt="Arsha Logo">
+            </a>
+        </div>
+
+        <div class="preview-devices">
+            <ul>
+                <li class="preview-test" id="preview-test-desktop" title="Desktop preview of the Arsha template">
+                    <label for="mode-desktop">
+                        <svg class="icon icon-preview" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/>
+                        </svg>
+                    </label>
+                </li>
+                <li class="preview-test" id="preview-test-tablet" title="Tablet preview of the Arsha template">
+                    <label for="mode-tablet">
+                        <svg class="icon icon-tablet" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 0H6C4.34 0 3 1.34 3 3v18c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V3c0-1.66-1.34-3-3-3zm-4 22h-4v-1h4v1zm5.25-3H4.75V3h14.5v16z"/>
+                        </svg>
+                    </label>
+                </li>
+                <li class="preview-test" id="preview-test-mobile" title="Mobile preview of the Arsha template">
+                    <label for="mode-mobile">
+                        <svg class="icon icon-smartphone" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm-2 20h-4v-1h4v1zm3.25-3H6.75V4h10.5v14z"/>
+                        </svg>
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="current-template">
+            <a href="#" title="Previous Template">
+                <svg class="icon icon-chevron-left" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </a>
+            <a class="template-home" href="index.html" title="Arsha Template Home Page">Arsha</a>
+            <a href="#" title="Next Template">
+                <svg class="icon icon-chevron-right" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="navigate">
+            <a href="index.html" target="_top" title="Hide the demo bar" class="demo-external">
+                <svg class="icon icon-external-link" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                </svg>
+            </a>
+            <a href="https://github.com" target="_blank" class="download">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                </svg>
+                <span>Download</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+
+    <!-- Header -->
+    <header id="header" class="header d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+            <h1 class="sitename">Arsha</h1>
+        </a>
+
+        <div class="header-right d-flex align-items-center">
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li class="dropdown"><a href="#"><span>Dropdown</span> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="toggle-dropdown" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg></a>
+                        <ul>
+                            <li><a href="#">Dropdown 1</a></li>
+                            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="toggle-dropdown" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                                <ul>
+                                    <li><a href="#">Deep Dropdown 1</a></li>
+                                    <li><a href="#">Deep Dropdown 2</a></li>
+                                    <li><a href="#">Deep Dropdown 3</a></li>
+                                    <li><a href="#">Deep Dropdown 4</a></li>
+                                    <li><a href="#">Deep Dropdown 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Dropdown 2</a></li>
+                            <li><a href="#">Dropdown 3</a></li>
+                            <li><a href="#">Dropdown 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="mobile-nav-toggle d-xl-none" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </nav>
+
+            <a class="btn-getstarted" href="#about">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="hero-content">
+                        <h2>Better Solutions For Your Business</h2>
+                        <p>We are team of talented designers making websites with Bootstrap</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn-get-started">Get Started</a>
+                            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="btn-watch-video">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+                                </svg>
+                                <span>Watch Video</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="placeholder-image">Hero Image</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section id="clients" class="clients">
+            <div class="container">
+                <div class="clients-grid">
+                    <div class="client-logo">Client 1</div>
+                    <div class="client-logo">Client 2</div>
+                    <div class="client-logo">Client 3</div>
+                    <div class="client-logo">Client 4</div>
+                    <div class="client-logo">Client 5</div>
+                    <div class="client-logo">Client 6</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Voluptatem dignissimos provident quasi</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <ul class="about-list">
+                            <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                            <li>Duis aute irure dolor in reprehenderit in voluptate velit</li>
+                            <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <div class="placeholder-image">About Image</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Services</h2>
+                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-box">
+                        <div class="service-icon">📱</div>
+                        <h4>Lorem Ipsum</h4>
+                        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">📄</div>
+                        <h4>Sed ut perspiciatis</h4>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">⚡</div>
+                        <h4>Magni Dolores</h4>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon">🌍</div>
+                        <h4>Nemo Enim</h4>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Process Section -->
+        <section id="work-process" class="work-process">
+            <div class="container">
+                <div class="process-content">
+                    <div class="process-image">
+                        <div class="placeholder-image">Process Image</div>
+                    </div>
+                    <div class="process-text">
+                        <h3>Our Work Process</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="process-steps">
+                            <div class="process-item">
+                                <div class="process-header">
+                                    <span>01</span>
+                                    <h4>Planning and Research</h4>
+                                </div>
+                                <div class="process-content-text">
+                                    <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida.</p>
+                                </div>
+                            </div>
+                            <div class="process-item">
+                                <div class="process-header">
+                                    <span>02</span>
+                                    <h4>Design and Development</h4>
+                                </div>
+                                <div class="process-content-text">
+                                    <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi.</p>
+                                </div>
+                            </div>
+                            <div class="process-item">
+                                <div class="process-header">
+                                    <span>03</span>
+                                    <h4>Testing and Launch</h4>
+                                </div>
+                                <div class="process-content-text">
+                                    <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call To Action Section -->
+        <section id="cta" class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h3>Call To Action</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a href="#" class="btn-cta">Call To Action</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Portfolio</h2>
+                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
+                </div>
+                <div class="portfolio-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">App</button>
+                    <button class="filter-btn">Card</button>
+                    <button class="filter-btn">Web</button>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="placeholder-image">Portfolio 1</div>
+                        <div class="portfolio-info">
+                            <h4>App 1</h4>
+                            <p>App</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="placeholder-image">Portfolio 2</div>
+                        <div class="portfolio-info">
+                            <h4>Web 3</h4>
+                            <p>Web</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="placeholder-image">Portfolio 3</div>
+                        <div class="portfolio-info">
+                            <h4>App 2</h4>
+                            <p>App</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="placeholder-image">Portfolio 4</div>
+                        <div class="portfolio-info">
+                            <h4>Card 2</h4>
+                            <p>Card</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="placeholder-image">Portfolio 5</div>
+                        <div class="portfolio-info">
+                            <h4>Web 2</h4>
+                            <p>Web</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="placeholder-image">Portfolio 6</div>
+                        <div class="portfolio-info">
+                            <h4>App 3</h4>
+                            <p>App</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Team</h2>
+                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <div class="placeholder-image">Member 1</div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                            <p>Magni qui quod omnis unde et eos fuga et exercitationem</p>
+                            <div class="social-links">
+                                <a href="#">T</a>
+                                <a href="#">F</a>
+                                <a href="#">I</a>
+                                <a href="#">L</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <div class="placeholder-image">Member 2</div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Product Manager</span>
+                            <p>Repellat fugiat adipisci nemo illum nesciunt voluptas</p>
+                            <div class="social-links">
+                                <a href="#">T</a>
+                                <a href="#">F</a>
+                                <a href="#">I</a>
+                                <a href="#">L</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <div class="placeholder-image">Member 3</div>
+                        </div>
+                        <div class="member-info">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                            <p>Voluptas necessitatibus occaecati quia placeat</p>
+                            <div class="social-links">
+                                <a href="#">T</a>
+                                <a href="#">F</a>
+                                <a href="#">I</a>
+                                <a href="#">L</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <div class="placeholder-image">Member 4</div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Amanda Jepson</h4>
+                            <span>Accountant</span>
+                            <p>Dolorum tempora officiis odit laborum officiis</p>
+                            <div class="social-links">
+                                <a href="#">T</a>
+                                <a href="#">F</a>
+                                <a href="#">I</a>
+                                <a href="#">L</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Pricing</h2>
+                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-box">
+                        <h3>Free</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">0</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Aida dere</li>
+                            <li>Nec feugiat nisl</li>
+                            <li>Nulla at volutpat dola</li>
+                            <li class="disabled">Pharetra massa</li>
+                            <li class="disabled">Massa ultricies mi</li>
+                        </ul>
+                        <a href="#" class="btn-buy">Buy Now</a>
+                    </div>
+                    <div class="pricing-box featured">
+                        <span class="badge">Featured</span>
+                        <h3>Business</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">29</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Aida dere</li>
+                            <li>Nec feugiat nisl</li>
+                            <li>Nulla at volutpat dola</li>
+                            <li>Pharetra massa</li>
+                            <li class="disabled">Massa ultricies mi</li>
+                        </ul>
+                        <a href="#" class="btn-buy">Buy Now</a>
+                    </div>
+                    <div class="pricing-box">
+                        <h3>Developer</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">49</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Aida dere</li>
+                            <li>Nec feugiat nisl</li>
+                            <li>Nulla at volutpat dola</li>
+                            <li>Pharetra massa</li>
+                            <li>Massa ultricies mi</li>
+                        </ul>
+                        <a href="#" class="btn-buy">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Testimonials</h2>
+                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</p>
+                            <div class="testimonial-author">
+                                <div class="author-image">SW</div>
+                                <div class="author-info">
+                                    <h4>Saul Goodman</h4>
+                                    <span>CEO & Founder</span>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</p>
+                            <div class="testimonial-author">
+                                <div class="author-image">SR</div>
+                                <div class="author-info">
+                                    <h4>Sara Wilsson</h4>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                            <div class="rating">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Non consectetur a erat nam at lectus urna duis?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section id="newsletter" class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h3>Join Our Newsletter</h3>
+                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    <div class="newsletter-form">
+                        <form>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="blog">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Recent Blog Posts</h2>
+                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-item">
+                        <div class="blog-image">
+                            <div class="placeholder-image">Blog 1</div>
+                            <div class="blog-date">Jan 1</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>👤 John Doe</span>
+                                <span>🏷️ Business</span>
+                            </div>
+                            <h4><a href="#">Dolorum optio tempore voluptas dignissimos cumque</a></h4>
+                            <p>Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="blog-image">
+                            <div class="placeholder-image">Blog 2</div>
+                            <div class="blog-date">Jan 5</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>👤 Jane Smith</span>
+                                <span>🏷️ Marketing</span>
+                            </div>
+                            <h4><a href="#">Nisi magni odit consequatur autem nulla dolorem</a></h4>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="blog-image">
+                            <div class="placeholder-image">Blog 3</div>
+                            <div class="blog-date">Jan 12</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>👤 Mike Ross</span>
+                                <span>🏷️ Technology</span>
+                            </div>
+                            <h4><a href="#">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a></h4>
+                            <p>Aut enim eveniet est perferendis rerum quas eum quis qui explicabo quas et voluptatem ea</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-box">
+                            <h4>Location:</h4>
+                            <p>A108 Adam Street, New York, NY 535022</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Email:</h4>
+                            <p>info@example.com</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Call:</h4>
+                            <p>+1 5589 55488 55</p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-row">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <input type="text" name="subject" placeholder="Subject" required>
+                            <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-6">
+                        <h4>Join Our Newsletter</h4>
+                        <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+                        <form action="forms/newsletter.php" method="post" class="php-email-form">
+                            <div class="newsletter-form">
+                                <input type="email" name="email">
+                                <input type="submit" value="Subscribe">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <span class="sitename">Arsha</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>A108 Adam Street</p>
+                        <p>New York, NY 535022</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+                        <p><strong>Email:</strong> <span>info@example.com</span></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg> <a href="#">Home</a></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg> <a href="#">About us</a></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg> <a href="#">Services</a></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg> <a href="#">Terms of service</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg> <a href="#">Web Design</a></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg> <a href="#">Web Development</a></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg> <a href="#">Product Management</a></li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg> <a href="#">Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <h4>Follow Us</h4>
+                    <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                    <div class="social-links d-flex">
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Arsha</strong> <span>All Rights Reserved</span></p>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+        </svg>
+    </a>
+
+    </div> <!-- End .page-wrapper -->
+</body>
+</html>

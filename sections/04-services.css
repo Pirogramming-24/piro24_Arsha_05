@@ -1,0 +1,67 @@
+/* Services Section Styles */
+.services {
+    padding: 80px 0;
+    background: #f3f5fa;
+}
+
+.services .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.service-box {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid #e9ecef;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #47b2e4;
+}
+
+.service-box h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #37517e;
+    margin-bottom: 15px;
+}
+
+.service-box h4 a {
+    color: #37517e;
+    transition: color 0.3s;
+}
+
+.service-box:hover h4 a {
+    color: #47b2e4;
+}
+
+.service-box p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #848484;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}

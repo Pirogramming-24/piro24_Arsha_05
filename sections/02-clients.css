@@ -1,0 +1,53 @@
+/* Clients Section Styles */
+.clients {
+    background: #f3f5fa;
+    padding: 60px 0;
+}
+
+.clients .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    align-items: center;
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    height: 80px;
+    font-size: 14px;
+    color: #999;
+}
+
+.client-logo:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@media (max-width: 992px) {
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}

@@ -1,0 +1,419 @@
+/*--------------------------------------------------------------
+# Demo Preview Styles
+--------------------------------------------------------------*/
+*,::after,::before {
+    box-sizing: border-box
+}
+
+body,html {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    background: url('img/demo-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#demo-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 32px;
+    background: #023b6d;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+}
+
+.demo-logo {
+    padding-left: 10px
+}
+
+.demo-logo img {
+    height: 25px
+}
+
+.demo-logo a {
+    display: flex
+}
+
+.demo-logo strong {
+    margin-left: 6px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.demo-logo strong span {
+    color: #00a6eb
+}
+
+@media (max-width: 768px) {
+    .demo-logo {
+        display:none
+    }
+}
+
+.preview-devices {
+    margin-top: 2px
+}
+
+.preview-devices ul {
+    margin: 0 0 0 20px;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    align-items: center
+}
+
+.preview-devices label {
+    color: rgba(255,255,255,.5);
+    display: inline-block;
+    padding: 5px 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.preview-devices label .icon {
+    width: 22px;
+    height: 22px
+}
+
+.preview-devices label:hover {
+    color: #fff
+}
+
+@media (max-width: 1024px) {
+    .preview-devices {
+        display:none
+    }
+}
+
+.navigate {
+    display: flex;
+    margin-left: auto;
+    align-items: center
+}
+
+.navigate .icon {
+    width: 22px;
+    height: 22px
+}
+
+.navigate a {
+    color: rgba(255,255,255,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none
+}
+
+.navigate a:hover {
+    color: #fff
+}
+
+.navigate .download {
+    background: #00a6eb;
+    color: #fff;
+    font-size: 13px;
+    padding: 0 16px;
+    height: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 15px;
+    white-space: nowrap
+}
+
+.navigate .download .icon {
+    width: 20px;
+    height: 20px
+}
+
+.navigate .download span {
+    padding-left: 6px
+}
+
+.navigate .download:hover {
+    background: #00b4ff
+}
+
+@media (max-width: 768px) {
+    .navigate .download {
+        padding:0 10px;
+        font-size: 12px;
+        margin-left: 10px
+    }
+
+    .navigate .download .icon {
+        display: none
+    }
+}
+
+.current-template {
+    margin-top: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px
+}
+
+@media (min-width: 768px) {
+    .current-template {
+        padding-left:0;
+        margin-left: auto
+    }
+}
+
+.current-template .icon {
+    width: 24px;
+    height: 24px
+}
+
+.current-template a {
+    color: rgba(255,255,255,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none
+}
+
+.current-template a:hover {
+    color: #fff
+}
+
+.current-template .template-home {
+    font-size: 16px;
+    padding: 0;
+    font-weight: 700;
+    color: #fff;
+    margin: -2px 10px 0 10px;
+    line-height: 0;
+    text-decoration: none
+}
+
+.demo-external {
+    color: rgba(255,255,255,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.demo-external:hover {
+    color: #fff
+}
+
+.demo-external .icon {
+    width: 22px;
+    height: 22px
+}
+
+#preview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 32px;
+    bottom: 0;
+}
+
+#preview-frame {
+    border: 0;
+    position: absolute
+}
+
+.preview-desktop {
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.preview-tablet {
+    width: 768px;
+    height: 100%;
+    left: calc(50% - 384px)
+}
+
+.preview-mobile {
+    width: 380px;
+    height: 680px;
+    left: calc(50% - 190px);
+    top: 0;
+    margin-top: 20px
+}
+
+/* Adjust main header to accommodate demo header */
+.header {
+    top: 32px !important;
+}
+
+/*--------------------------------------------------------------
+# CSS-only Device Preview Logic
+--------------------------------------------------------------*/
+
+/* Page Wrapper Transition */
+.page-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+}
+
+/* Active Button State (controlled by radio inputs in index.html) */
+#mode-desktop:checked ~ #demo-header #preview-test-desktop label,
+#mode-tablet:checked ~ #demo-header #preview-test-tablet label,
+#mode-mobile:checked ~ #demo-header #preview-test-mobile label {
+    color: #fff;
+}
+
+/* Tablet View */
+#mode-tablet:checked ~ .page-wrapper {
+    max-width: 768px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+#mode-tablet:checked ~ .page-wrapper .header {
+    width: 100%;
+    max-width: 768px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Force mobile navigation for tablet view */
+#mode-tablet:checked ~ .page-wrapper .header .logo {
+    order: 0;
+    padding-left: 12px;
+}
+
+#mode-tablet:checked ~ .page-wrapper .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+}
+
+#mode-tablet:checked ~ .page-wrapper .header .navmenu {
+    order: 3;
+}
+
+#mode-tablet:checked ~ .page-wrapper .mobile-nav-toggle {
+    display: block !important;
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    padding-right: 12px;
+    cursor: pointer;
+    width: 38px;
+    height: 30px;
+}
+
+#mode-tablet:checked ~ .page-wrapper .navmenu {
+    padding: 0;
+    z-index: 9997;
+}
+
+#mode-tablet:checked ~ .page-wrapper .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    z-index: 9998;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+#mode-tablet:checked ~ .page-wrapper .navmenu a,
+#mode-tablet:checked ~ .page-wrapper .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+/* Mobile View */
+#mode-mobile:checked ~ .page-wrapper {
+    max-width: 375px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+#mode-mobile:checked ~ .page-wrapper .header {
+    width: 100%;
+    max-width: 375px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Force mobile navigation for mobile view */
+#mode-mobile:checked ~ .page-wrapper .header .logo {
+    order: 0;
+    padding-left: 12px;
+}
+
+#mode-mobile:checked ~ .page-wrapper .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+}
+
+#mode-mobile:checked ~ .page-wrapper .header .navmenu {
+    order: 3;
+}
+
+#mode-mobile:checked ~ .page-wrapper .mobile-nav-toggle {
+    display: block !important;
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    padding-right: 12px;
+    cursor: pointer;
+    width: 38px;
+    height: 30px;
+}
+
+#mode-mobile:checked ~ .page-wrapper .navmenu {
+    padding: 0;
+    z-index: 9997;
+}
+
+#mode-mobile:checked ~ .page-wrapper .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    z-index: 9998;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+#mode-mobile:checked ~ .page-wrapper .navmenu a,
+#mode-mobile:checked ~ .page-wrapper .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}

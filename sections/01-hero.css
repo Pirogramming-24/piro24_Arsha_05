@@ -2,7 +2,7 @@
 .hero {
     background: #37517e;
     color: #fff;
-    padding: 224px 0 80px 0;
+    padding: 160px 0 60px 0;
     margin-top: 0;
 }
 
@@ -10,10 +10,17 @@
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding: 0;
     margin-right: auto;
     margin-left: auto;
+    max-width: 1140px;
+}
+
+/* 1400px 이상: container 1320px */
+@media (min-width: 1400px) {
+    .hero .container {
+        max-width: 1320px;
+    }
 }
 
 .hero .row {
@@ -22,13 +29,24 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
+    margin: 0;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .hero-content {
-    flex: 1;
+    width: 546px;
+}
+
+/* 1400px 이상: 636px, 가로 배치 */
+@media (min-width: 1400px) {
+    .hero .row {
+        flex-direction: row;
+    }
+
+    .hero-content {
+        width: 636px;
+    }
 }
 
 .hero-content h2 {
@@ -64,82 +82,87 @@
     background: #209dd8;
 }
 
-.hero-buttons .btn-video {
-    color: #fff;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.hero-buttons .btn-watch-video svg,
+.hero .btn-watch-video svg {
+    margin-right: 12px;
     transition: color 0.3s;
 }
 
-.hero-buttons .btn-video::before {
-    content: '▶';
-    width: 55px;
-    height: 55px;
-    background: linear-gradient(to right, #47b2e4 0%, #209dd8 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
+.hero-buttons .btn-watch-video:hover,
+.hero .btn-watch-video:hover {
+    color: #47b2e4;
 }
 
+.hero-buttons .btn-watch-video:hover svg,
 .hero .btn-watch-video:hover svg {
     color: #47b2e4;
 }
 
 .hero-image {
-    flex: 1;
+    width: 546px;
 }
 
-.hero-image .placeholder-image {
+/* 1400px 이상: 636px, 가로 배치 */
+@media (min-width: 1400px) {
+    .hero-image {
+        width: 636px;
+        order: 0;
+    }
+}
+
+.hero-image img {
     width: 100%;
-    height: 400px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #fff;
-    animation: float 3s ease-in-out infinite;
+    height: auto;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
+/* 1200px 이상: 가로 배치 */
+@media (min-width: 1200px) {
+    .hero .row {
+        flex-direction: row;
     }
-    50% {
-        transform: translateY(-20px);
+
+    .hero-image {
+        order: 0;
     }
 }
 
-@media (max-width: 768px) {
-    .hero {
-        padding: 80px 0 60px 0;
+/* 1200px 미만: 456px */
+@media (max-width: 1199px) {
+    .hero-content {
+        width: 456px;
     }
 
+    .hero-image {
+        width: 456px;
+    }
+}
+
+/* 1000px 미만: 세로 배치, 695px */
+@media (max-width: 999px) {
     .hero .row {
         flex-direction: column;
         gap: 40px;
     }
 
-    .hero-content h2 {
-        font-size: 36px;
+    .hero-content {
+        width: 695px;
     }
 
-    .hero-content p {
-        font-size: 18px;
+    .hero-image {
+        width: 695px;
+        order: -1;
+    }
+}
+
+/* 766px 이하: 516px */
+@media (max-width: 766px) {
+    .hero-content {
+        width: 516px;
+        padding: 0 12px;
     }
 
-    .hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero-image .placeholder-image {
-        height: 300px;
+    .hero-image {
+        width: 516px;
     }
 }
 
@@ -182,7 +205,6 @@
 .hero .btn-watch-video {
   font-size: 16px;
   transition: 0.5s;
-  margin-left: 25px;
   color: #fff;
   font-weight: 600;
   display: flex;
@@ -209,18 +231,30 @@
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
+/* 640px 이하: 이미지 반응형, 텍스트 고정값 */
 @media (max-width: 640px) {
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-content h2,
   .hero h1 {
     font-size: 28px;
     line-height: 36px;
   }
 
+  .hero-content p,
   .hero p {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
   }
 
+  .hero-buttons .btn-primary,
   .hero .btn-get-started,
   .hero .btn-watch-video {
     font-size: 13px;

@@ -417,3 +417,54 @@ body {
     justify-content: space-between;
     white-space: nowrap;
 }
+
+/* Hero section responsive styles for demo mode */
+/* Tablet View - 768px */
+#mode-tablet:checked ~ .page-wrapper .hero-content {
+    width: 695px !important;
+}
+
+#mode-tablet:checked ~ .page-wrapper .hero-image {
+    width: 695px !important;
+    order: -1 !important;
+}
+
+#mode-tablet:checked ~ .page-wrapper .hero .row {
+    flex-direction: column !important;
+    gap: 40px !important;
+}
+
+/* Mobile View - 375px */
+#mode-mobile:checked ~ .page-wrapper .hero-content {
+    width: 100% !important;
+    padding: 0 12px !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .hero-image {
+    width: 100% !important;
+    order: -1 !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .hero .row {
+    flex-direction: column !important;
+    gap: 40px !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .hero-content h2,
+#mode-mobile:checked ~ .page-wrapper .hero h1 {
+    font-size: 28px !important;
+    line-height: 36px !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .hero-content p,
+#mode-mobile:checked ~ .page-wrapper .hero p {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    margin-bottom: 30px !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .hero-buttons .btn-primary,
+#mode-mobile:checked ~ .page-wrapper .hero .btn-get-started,
+#mode-mobile:checked ~ .page-wrapper .hero .btn-watch-video {
+    font-size: 13px !important;
+}

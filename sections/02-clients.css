@@ -147,3 +147,35 @@
         display: none;
     }
 }
+
+/* Demo Mode - Tablet */
+#mode-tablet:checked ~ .page-wrapper .clients-grid {
+    gap: 30px;
+    margin: 0 40px;
+}
+
+#mode-tablet:checked ~ .page-wrapper .client-logo {
+    width: 116px;
+    height: 36px;
+    padding: 0 10px;
+}
+
+#mode-tablet:checked ~ .page-wrapper .client-logo:nth-child(n+5) {
+    display: none;
+}
+
+/* Demo Mode - Mobile */
+#mode-mobile:checked ~ .page-wrapper .clients-grid {
+    gap: 20px;
+    margin: 0 40px;
+}
+
+#mode-mobile:checked ~ .page-wrapper .client-logo {
+    width: calc(50% - 10px);
+    height: 60px;
+    padding: 0 12px;
+}
+
+#mode-mobile:checked ~ .page-wrapper .client-logo:nth-child(n+3) {
+    display: none;
+}

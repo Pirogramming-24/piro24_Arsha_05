@@ -1,58 +1,97 @@
-/* CTA (Call To Action) Section Styles */
+/* Call To Action(cta) Section Styles */
+
 .cta {
-    background: linear-gradient(135deg, #37517e 0%, #47b2e4 100%);
-    padding: 80px 0;
+  position: relative;
+  padding: 120px 0;
+  clip-path: inset(0);
+
+  background:
+    linear-gradient(0deg, rgba(40, 58, 90, 0.63), rgba(40, 58, 90, 0.63)),
+    url("../images/call_to_action/bg-8.webp") center center no-repeat;
+  background-size: cover;
 }
 
 .cta .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 60px;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 160px;
+}
+
+.cta-text {
+  flex: 0 0 70%;
+  max-width: 1280px;
+}
+
+.cta-text h3 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: rgba(255,255,255,0.97);
+}
+
+.cta-text p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 0;
+}
+
+.cta .btn-cta {
+  font-size: 16px;
+  padding: 12px 40px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+  white-space: nowrap;
+  transition: 0.5s;
+  flex-shrink: 0;
+}
+
+.cta .btn-cta:hover {
+  background: #47b2e4;
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    row-gap: 20px;
+  }
+
+  .cta-text {
+    max-width: 100%;
+  }
+
+  .cta .btn-cta {
+    margin-top: 8px;
+  }
 }
 
-.cta-content h3 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 20px;
+/* BootstrapMade preview 전용(main branch에 merge시 삭제) */
+#mode-tablet:checked ~ .page-wrapper #cta .cta-content,
+#mode-mobile:checked ~ .page-wrapper #cta .cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    row-gap: 20px;
 }
 
-.cta-content p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 30px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-content .btn-cta {
-    display: inline-block;
-    background: #fff;
-    color: #47b2e4;
-    padding: 12px 40px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s;
-    border: 2px solid #fff;
-}
-
-.cta-content .btn-cta:hover {
-    background: transparent;
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    .cta-content h3 {
-        font-size: 26px;
-    }
-
-    .cta-content p {
-        font-size: 15px;
-    }
+#mode-tablet:checked ~ .page-wrapper #cta .btn-cta,
+#mode-mobile:checked ~ .page-wrapper #cta .btn-cta {
+    margin-top: 8px;
 }

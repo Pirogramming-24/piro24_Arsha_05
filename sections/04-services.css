@@ -1,67 +1,130 @@
-/* Services Section Styles */
+/* --- Services Section Animation Settings --- */
+
+/* 1. 키프레임 정의 */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. 등장 애니메이션 적용 (바깥쪽 item에 적용) */
+.services .section-title, 
+.services-grid > .service-item {
+    opacity: 0;
+    animation: slideUpFade 0.8s ease-out forwards;
+}
+
+/* 3. 순차 딜레이 설정 */
+.services .section-title { animation-delay: 5.4s; }
+.services-grid > div:nth-child(1) { animation-delay: 5.8s; }
+.services-grid > div:nth-child(2) { animation-delay: 6.2s; }
+.services-grid > div:nth-child(3) { animation-delay: 6.6s; }
+.services-grid > div:nth-child(4) { animation-delay: 7.0s; }
+
+
+/* --- Services Section Styles --- */
 .services {
     padding: 80px 0;
-    background: #f3f5fa;
+    background: #F5F6F8;
 }
 
 .services .container {
-    max-width: 1200px;
+    max-width: 1330px; 
     margin: 0 auto;
     padding: 0 20px;
 }
 
+.services .section-title {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.services .section-title p {
+    color: #444444;
+}
+
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin-top: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px; 
+    margin-top: 40px;
 }
 
+/* 실제 상호작용을 담당하는 박스 */
 .service-box {
     background: #fff;
-    padding: 40px 30px;
-    border-radius: 5px;
-    transition: all 0.3s;
+    padding: 55px 35px; 
+    border-radius: 0; 
+
+    /* 부드러운 호버를 위한 설정 */
+    transform: translateY(0);
+    /* 0.4초 동안 부드럽게 움직이며, 베이지어 곡선을 주어 탄성감을 더함 */
+    transition: transform 1.0s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    
     cursor: pointer;
-    border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    text-align: left;
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    
+    width: 100%;
+    height: 100%;
 }
 
+/* 호버 효과: 애니메이션의 transform과 충돌하지 않음 */
 .service-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px); 
 }
 
 .service-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: #47b2e4;
+    margin-bottom: 12px;
+}
+
+.service-icon img {
+    width: 45px;
+    height: auto;
 }
 
 .service-box h4 {
-    font-size: 22px;
+    font-size: 20px; 
     font-weight: 700;
     color: #37517e;
     margin-bottom: 15px;
-}
-
-.service-box h4 a {
-    color: #37517e;
     transition: color 0.3s;
+    word-break: keep-all;
 }
 
-.service-box:hover h4 a {
+.service-box:hover h4 {
     color: #47b2e4;
 }
 
 .service-box p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #848484;
+    font-size: 14.5px; 
+    line-height: 1.7;
+    color: #444444; 
+    margin: 0;
+    word-break: normal; 
+    overflow-wrap: break-word; 
+    letter-spacing: -0.2px;
+}
+
+/* 반응형 설정 */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
     }
 }

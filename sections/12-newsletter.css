@@ -1,7 +1,7 @@
-/* Newsletter Section Styles */
+/* Newsletter Section */
 .newsletter {
-    background: linear-gradient(135deg, #37517e 0%, #47b2e4 100%);
-    padding: 60px 0;
+    background: #fff;
+    padding: 100px 0;
 }
 
 .newsletter .container {
@@ -10,67 +10,177 @@
     padding: 0 20px;
 }
 
+/* 흰색 카드 박스 - 좌우 배치를 위한 Flex 컨테이너 */
+.newsletter-wrapper {
+    background: #EEEFF1;
+    border-radius: 10px;
+    padding: 60px 60px 0 60px;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+}
+
+/* 왼쪽 콘텐츠 영역 */
 .newsletter-content {
-    text-align: center;
+    flex: 1;
+    text-align: left;
+    min-width: 0;
 }
 
 .newsletter-content h3 {
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 700;
-    color: #fff;
-    margin-bottom: 15px;
+    color: #37517e;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .newsletter-content p {
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 30px;
+    color: #848484;
+    line-height: 1.8;
+    margin-bottom: 35px;
 }
 
+/* 폼 디자인 */
 .newsletter-form {
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .newsletter-form form {
     display: flex;
-    gap: 10px;
+    gap: 0;
+    border: 1px solid #e9ecef;
+    border-radius: 50px;
+    overflow: hidden;
+    background: #fff;
+    max-width: 550px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .newsletter-form input[type="email"] {
     flex: 1;
-    padding: 12px 20px;
+    padding: 14px 28px;
     border: none;
-    border-radius: 50px;
-    font-size: 15px;
     outline: none;
+    background: transparent;
+    color: #37517e;
+    font-size: 15px;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: #adb5bd;
 }
 
 .newsletter-form button {
-    background: #fff;
-    color: #47b2e4;
-    padding: 12px 35px;
+    background: #47b2e4;
+    color: #fff;
+    padding: 14px 40px;
+    border: none;
     border-radius: 50px;
+    font-size: 15px;
     font-weight: 600;
+    cursor: pointer;
     transition: all 0.3s;
     white-space: nowrap;
 }
 
 .newsletter-form button:hover {
-    background: #f3f5fa;
-    transform: scale(1.05);
+    background: #209dd8;
+}
+
+/* 오른쪽 이미지 영역 */
+.newsletter-image {
+    flex: 0 0 45%;
+    text-align: center;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-image img {
+    max-width: 76%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 992px) {
+    .newsletter {
+        padding: 80px 0;
+    }
+
+    .newsletter-wrapper {
+        flex-direction: column;
+        padding: 50px 40px;
+        gap: 50px;
+    }
+    
+    .newsletter-content {
+        text-align: center;
+        width: 100%;
+    }
+
+    .newsletter-content h3 {
+        font-size: 28px;
+    }
+
+    .newsletter-content h3,
+    .newsletter-content p {
+        text-align: center;
+    }
+
+    .newsletter-form form {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    .newsletter-image {
+        flex: 1;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media (max-width: 576px) {
+    .newsletter {
+        padding: 60px 0;
+    }
+
+    .newsletter-wrapper {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
     .newsletter-content h3 {
         font-size: 24px;
     }
 
+    .newsletter-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
     .newsletter-form form {
         flex-direction: column;
+        border-radius: 10px;
+        border: none;
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .newsletter-form input[type="email"] {
+        border: 1px solid #e9ecef;
+        border-radius: 50px;
+        padding: 12px 20px;
     }
 
     .newsletter-form button {
         width: 100%;
+        border-radius: 50px;
     }
 }

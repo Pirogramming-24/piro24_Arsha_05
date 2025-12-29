@@ -238,3 +238,49 @@
         gap: 0;
     }
 }
+
+/* --------------------------------------------------------------
+# [수정됨] 강력한 스크롤 애니메이션 (Scroll-driven Animations)
+-------------------------------------------------------------- */
+
+/* 1. 움직임 정의: 더 확실하게 아래에서 올라오도록 수정 */
+@keyframes scrollSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(150px); /* 50px -> 150px로 이동 거리 대폭 증가 */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);     /* 제자리로 */
+    }
+}
+
+/* 2. 애니메이션 실행 클래스 */
+.scroll-animate {
+    /* 이름 / 속도(linear) / fill-mode(both: 시작 전과 끝난 후 상태 유지) */
+    animation: scrollSlideUp linear both;
+
+    /* 뷰포트(화면) 감지 */
+    animation-timeline: view();
+
+    /* [핵심 수정] 애니메이션 실행 범위 (Range)
+       entry 0% : 요소의 머리가 화면 맨 아래 닿자마자 시작
+       cover 30% : 요소가 화면의 30% 지점까지 올라오면 애니메이션 완료 
+       -> 이렇게 하면 스크롤을 조금만 내려도 바로 올라오는 게 보입니다. */
+    animation-range: entry 0% cover 30%;
+}
+
+/* 3. 딜레이 설정 (순차적으로 올라오는 느낌) */
+/* margin-top을 살짝 줘서 물리적인 시작 위치를 다르게 보이게 하는 트릭 */
+
+.delay-100 {
+    animation-range: entry 5% cover 35%; /* 조금 더 늦게 시작 */
+}
+
+.delay-200 {
+    animation-range: entry 10% cover 40%; /* 더 늦게 시작 */
+}
+
+.delay-300 {
+    animation-range: entry 15% cover 45%; /* 가장 늦게 시작 */
+}

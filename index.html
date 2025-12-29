@@ -309,63 +309,450 @@
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="portfolio">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Portfolio</h2>
-                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
-                </div>
-                <div class="portfolio-filters">
-                    <button class="filter-btn active">All</button>
-                    <button class="filter-btn">App</button>
-                    <button class="filter-btn">Card</button>
-                    <button class="filter-btn">Web</button>
-                </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <div class="placeholder-image">Portfolio 1</div>
-                        <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="placeholder-image">Portfolio 2</div>
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="placeholder-image">Portfolio 3</div>
-                        <div class="portfolio-info">
-                            <h4>App 2</h4>
-                            <p>App</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="placeholder-image">Portfolio 4</div>
-                        <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="placeholder-image">Portfolio 5</div>
-                        <div class="portfolio-info">
-                            <h4>Web 2</h4>
-                            <p>Web</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="placeholder-image">Portfolio 6</div>
-                        <div class="portfolio-info">
-                            <h4>App 3</h4>
-                            <p>App</p>
-                        </div>
-                    </div>
-                </div>
+          <div class="container">
+
+            <div class="section-title">
+              <h2>PORTFOLIO</h2>
+              <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fuga</p>
             </div>
+
+            <div class="portfolio-controls">
+
+              <input type="radio" name="portfolio-filter" id="filter-all" checked>
+              <input type="radio" name="portfolio-filter" id="filter-app">
+              <input type="radio" name="portfolio-filter" id="filter-card">
+              <input type="radio" name="portfolio-filter" id="filter-web">
+
+              <div class="portfolio-filters">
+                <label for="filter-all"  class="filter-btn">All</label>
+                <label for="filter-app"  class="filter-btn">App</label>
+                <label for="filter-card" class="filter-btn">Card</label>
+                <label for="filter-web"  class="filter-btn">Web</label>
+              </div>
+              <div class="portfolio-grid grid-all">
+
+                <!-- LEFT (2) -->
+                <div class="portfolio-column">
+
+                  <!-- App 1 -->
+                  <div class="portfolio-item app">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/app-1.webp" alt="App 1">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>App 1</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview App 1">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details App 1">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Branding 2 -->
+                  <div class="portfolio-item web">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/web-2.webp" alt="Branding 2">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Branding 2</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Branding 2">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Branding 2">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- /LEFT -->
+
+
+                <!-- CENTER (4) -->
+                <div class="portfolio-column">
+
+                  <!-- Product 1 -->
+                  <div class="portfolio-item card">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/card-1.webp" alt="Product 1">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Product 1</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Product 1">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Product 1">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- App 2 -->
+                  <div class="portfolio-item app">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/app-2.webp" alt="App 2">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>App 2</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview App 2">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details App 2">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- App 3 -->
+                  <div class="portfolio-item app">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/app-3.webp" alt="App 3">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>App 3</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview App 3">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details App 3">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Branding 3 -->
+                  <div class="portfolio-item web">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/web-3.webp" alt="Branding 3">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Branding 3</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Branding 3">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Branding 3">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- /CENTER -->
+
+
+                <!-- RIGHT (3) -->
+                <div class="portfolio-column">
+
+                  <!-- Branding 1 -->
+                  <div class="portfolio-item web">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/web-1.webp" alt="Branding 1">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Branding 1</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Branding 1">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Branding 1">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 2 -->
+                  <div class="portfolio-item card">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/card-2.webp" alt="Product 2">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Product 2</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Product 2">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Product 2">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 3 -->
+                  <div class="portfolio-item card">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/card-3.webp" alt="Product 3">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Product 3</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Product 3">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Product 3">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- /RIGHT -->
+
+              </div><!-- /grid-all -->
+              
+              <div class="portfolio-grid grid-balanced">
+
+                <!-- LEFT -->
+                <div class="portfolio-column">
+
+                  <!-- App 1 -->
+                  <div class="portfolio-item app">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/app-1.webp" alt="App 1">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>App 1</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview App 1">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details App 1">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Branding 1 -->
+                  <div class="portfolio-item web">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/web-1.webp" alt="Branding 1">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Branding 1</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Branding 1">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Branding 1">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 1 -->
+                  <div class="portfolio-item card">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/card-1.webp" alt="Product 1">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Product 1</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Product 1">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Product 1">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- /LEFT (balanced) -->
+
+
+                <!-- CENTER -->
+                <div class="portfolio-column">
+
+                  <!-- App 2 -->
+                  <div class="portfolio-item app">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/app-2.webp" alt="App 2">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>App 2</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview App 2">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details App 2">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Branding 2 -->
+                  <div class="portfolio-item web">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/web-2.webp" alt="Branding 2">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Branding 2</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Branding 2">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Branding 2">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 2 -->
+                  <div class="portfolio-item card">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/card-2.webp" alt="Product 2">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Product 2</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Product 2">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Product 2">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- /CENTER (balanced) -->
+
+
+                <!-- RIGHT -->
+                <div class="portfolio-column">
+
+                  <!-- App 3 -->
+                  <div class="portfolio-item app">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/app-3.webp" alt="App 3">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>App 3</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview App 3">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details App 3">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Branding 3 -->
+                  <div class="portfolio-item web">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/web-3.webp" alt="Branding 3">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Branding 3</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Branding 3">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Branding 3">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 3 -->
+                  <div class="portfolio-item card">
+                    <div class="portfolio-wrap">
+                      <img src="images/portfolio/card-3.webp" alt="Product 3">
+                      <div class="portfolio-info">
+                        <div class="portfolio-text">
+                          <h4>Product 3</h4>
+                          <p>Lorem ipsum, dolor sit</p>
+                        </div>
+                        <div class="portfolio-links">
+                          <a href="#" aria-label="Preview Product 3">
+                            <img src="images/portfolio/Magnifying_Glass_Plus.svg" alt="Preview Icon">
+                          </a>
+                          <a href="#" aria-label="Details Product 3">
+                            <img src="images/portfolio/Link.svg" alt="Details Icon">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- /RIGHT (balanced) -->
+
+              </div><!-- /grid-balanced -->
+
+            </div>
+          </div>
         </section>
+
 
         <!-- Team Section -->
         <section id="team" class="team">

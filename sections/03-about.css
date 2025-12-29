@@ -120,47 +120,64 @@
   min-height: 18px;
 }
 
-/* Read More */
-.read-more {
+.about .read-more {
   display: inline-flex;
   align-items: center;
-  gap: 0.6vw;
-  border: 0.15vw solid #47b2e4;
-  background-color: transparent;
-  padding: 0.6vw 2vw;
-  border-radius: 0.35vw;
+  gap: 0.4vw;                 /* 간격 ↓ */
+
+  width: auto;
+  max-width: fit-content;
+
+  margin-left: 0.1vw;
+
+  border: 0.12vw solid #47b2e4; /* 테두리 조금 얇게 */
+  background-color: transparent !important;
+
+  padding: 0.5vw 2vw;       /* 상하 / 좌우 */
+  border-radius: 0.3vw;
+
   text-decoration: none;
-  /* 수정: 버튼 텍스트가 너무 커지거나 작아지지 않게 조정 */
-  font-size: clamp(16px, 1.2vw, 20px); 
-  color: #47b2e4;
-  transition: all 0.3s ease;
+  font-size: clamp(14px, 1vw, 18px); /* 폰트 한 단계 ↓ */
+  color: #47b2e4 !important;
+
+  box-sizing: border-box;
+  transition: all 0.25s ease;
 }
 
-.read-more span {
-  transition: color 0.3s ease;
+
+.about .read-more span {
+  color: inherit;
   white-space: nowrap;
+  transition: color 0.25s ease;
 }
 
-.arrow-icon {
-  width: 1.3vw;
-  min-width: 16px;
-  height: 1.3vw;
-  min-height: 16px;
-  transition: transform 0.3s ease, color 0.3s ease;
+
+
+.about .read-more .arrow-icon {
+  width: 1.1vw;
+  min-width: 14px;
+  height: 1.1vw;
+  min-height: 14px;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.25s ease;
 }
 
-.read-more:hover {
-  background-color: #47b2e4;
+
+.about .read-more:hover {
+  background-color: #47b2e4 !important;
 }
 
-.read-more:hover span {
+.about .read-more:hover span {
   color: #fff;
 }
 
-.read-more:hover .arrow-icon {
-  transform: translateX(0.5vw);
+.about .read-more:hover .arrow-icon {
+  transform: translateX(0.35vw);
   color: #fff;
 }
+
 
 /* =====================================
    Why Us Section

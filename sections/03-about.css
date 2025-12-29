@@ -1,118 +1,543 @@
-/* About Section Styles */
+/* =========================
+   About Section
+========================= */
 .about {
-    padding: 80px 0;
+  padding: 10% 6vw;
+  background-color: #fff;
+  padding-top: 50px;
 }
 
-.about .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
+/* Section Title */
 .section-title {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 3%;
+  opacity: 0;
+  animation: slideUpFade 1.2s ease forwards;
+  animation-delay: 0.5s; /* 딜레이 증가 */
 }
 
 .section-title h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #37517e;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    position: relative;
-    display: inline-block;
+  /* 수정: 화면이 줄어들어도 최소 24px 유지 */
+  font-size: clamp(24px, 2vw, 40px);
+  color: #37517e;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5vw;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 0.1vw;
+  background: #ddd;
+  bottom: -0.5vw;
 }
 
 .section-title h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: #47b2e4;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4vw;
+  height: 0.15vw;
+  background: #47b2e4;
+  bottom: -0.5vw;
 }
 
-.section-title p {
-    font-size: 15px;
-    color: #848484;
-    margin-top: 20px;
-}
-
+/* About Content */
 .about-content {
-    display: flex;
-    align-items: center;
-    gap: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2%;
 }
 
-.about-text {
-    flex: 1;
+/* Left / Right Column */
+.about-left,
+.about-right {
+  flex: 1 1 48%;
+  box-sizing: border-box;
+  padding: 0 0.5%;
+  overflow-wrap: normal;
+  word-break: normal;
+  min-width: 0;
+  opacity: 0;
 }
 
-.about-text h3 {
-    font-size: 28px;
-    font-weight: 700;
-    color: #37517e;
-    margin-bottom: 20px;
+.about-left { animation: slideUpFade 1.2s ease forwards; animation-delay: 1s; /* 딜레이 증가 */ }
+.about-right { animation: slideUpFade 1.2s ease forwards; animation-delay: 1.6s; /* 딜레이 증가 */ }
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.about-text p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #848484;
-    margin-bottom: 20px;
+/* Left Text */
+.main-text-left {
+  /* 수정: 최소 16px 이하로 줄어들지 않게 고정 */
+  font-size: clamp(16px, 1.1vw, 20px);
+  line-height: 1.6;
+  margin-bottom: 2%;
+  word-break: keep-all; /* 가독성을 위해 단어 단위 줄바꿈 */
+  overflow-wrap: normal;
+  white-space: normal;
 }
 
+/* Right Text */
+.main-text-right {
+  /* 수정: 최소 16px 이하로 줄어들지 않게 고정 */
+  font-size: clamp(16px, 1.1vw, 20px);
+  line-height: 1.6;
+  margin-bottom: 2%;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  white-space: normal;
+}
+
+/* Checklist */
 .about-list {
-    margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .about-list li {
-    padding: 10px 0;
-    font-size: 15px;
-    color: #848484;
-    position: relative;
-    padding-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 0.35vw;
+  /* 수정: 최소 15px 유지 */
+  font-size: clamp(15px, 1.1vw, 18px);
+  margin-bottom: 0.6vw;
 }
 
-.about-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #47b2e4;
-    font-weight: 700;
-    font-size: 18px;
+.check-icon {
+  width: 1.3vw;
+  min-width: 18px; /* 아이콘이 사라지지 않게 */
+  height: 1.3vw;
+  min-height: 18px;
 }
 
+/* Read More */
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6vw;
+  border: 0.15vw solid #47b2e4;
+  background-color: transparent;
+  padding: 0.6vw 2vw;
+  border-radius: 0.35vw;
+  text-decoration: none;
+  /* 수정: 버튼 텍스트가 너무 커지거나 작아지지 않게 조정 */
+  font-size: clamp(16px, 1.2vw, 20px); 
+  color: #47b2e4;
+  transition: all 0.3s ease;
+}
+
+.read-more span {
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.arrow-icon {
+  width: 1.3vw;
+  min-width: 16px;
+  height: 1.3vw;
+  min-height: 16px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: #47b2e4;
+}
+
+.read-more:hover span {
+  color: #fff;
+}
+
+.read-more:hover .arrow-icon {
+  transform: translateX(0.5vw);
+  color: #fff;
+}
+
+/* =====================================
+   Why Us Section
+===================================== */
+.about-whyus {
+  background: #F5F6F8;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 4vw 6vw;
+  padding-top: 3.8vw;
+  padding-bottom: 3.8vw;
+  margin-top: 5vw;
+  margin-bottom: 0;
+  min-height: 60vh;
+  box-sizing: border-box;
+}
+
+.about-whyus .container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.about-whyus-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3%;
+}
+
+/* Left Column */
+.whyus-left-container {
+  flex: 1 1 65%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1vw;
+  opacity: 0;
+  animation: slideUpFade 1.2s ease forwards;
+  animation-delay: 2.2s;
+}
+
+.whyus-left-container h3 {
+  /* 수정: Why Us 제목 크기 고정 방식 적용 */
+  font-size: clamp(22px, 2vw, 32px);
+  font-weight: 700;
+  color: #37517e;
+  margin: 0;
+  line-height: 1.25;
+  max-width: 700px;
+  word-break: keep-all;
+}
+
+.whyus-left-container h3 span {
+  font-weight: 400;
+}
+
+.whyus-left-container > p {
+  /* 수정: 설명 텍스트 크기 유지 */
+  font-size: clamp(15px, 1.05vw, 18px);
+  color: #848484;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 740px;
+}
+
+/* Toggle container */
+.whyus-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  margin-top: 0.6vw;
+  max-width: 740px;
+  opacity: 0;
+  animation: slideUpFade 1.2s ease forwards;
+  animation-delay: 3.4s;
+}
+
+.whyus-item {
+  background: #ffffff;
+  padding: 1.2vw;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12),
+              0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.whyus-item summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  /* 수정: 토글 제목 크기 유지 */
+  font-size: clamp(15px, 1.15vw, 19px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #37517e;
+  list-style: none;
+  flex-shrink: 1; 
+  min-width: 0;   
+}
+
+.whyus-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.whyus-num {
+  color: #47b2e4;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.whyus-q {
+  flex: 1;
+  min-width: 0;
+}
+
+.whyus-arrow {
+  width: 1.45vw;
+  min-width: 16px;
+  height: 1.45vw;
+  min-height: 16px;
+  color: #111;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.whyus-item[open] summary {
+  color: #47b2e4;
+}
+
+.whyus-item[open] .whyus-arrow {
+  color: #47b2e4;
+  transform: rotate(90deg);
+}
+
+.whyus-item p {
+  margin-top: 0.9vw;
+  /* 수정: 내부 텍스트 크기 유지 */
+  font-size: clamp(14px, 1.02vw, 17px);
+  line-height: 1.7;
+}
+
+/* Right Image */
 .about-image {
-    flex: 1;
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2.5vw;
+  opacity: 0;
+  animation: slideUpFade 1.2s ease forwards;
+  animation-delay: 2.8s;
 }
 
-.about-image .placeholder-image {
-    width: 100%;
-    height: 400px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #fff;
+.about-image img {
+  width: clamp(260px, 26vw, 420px);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        gap: 30px;
-    }
+/* =====================================
+   Skills Section
+===================================== */
+.about-content.about-skills {
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  background: #fff;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 8px 6vw;
+  margin-top: 0;
+  margin-bottom: 0;
+  min-height: unset;
+  box-sizing: border-box;
+}
 
-    .about-text h3 {
-        font-size: 24px;
-    }
+.about-content.about-skills .about-image,
+.about-content.about-skills .about-text {
+  flex: 1;
+  opacity: 0;
+  animation: slideUpFade 1.2s ease forwards;
+  animation-delay: 4.2s;
+}
 
-    .about-image .placeholder-image {
-        height: 300px;
-    }
+.about-content.about-skills .about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-content.about-skills .about-text > h3 {
+  /* 수정: Skills 제목 크기 고정 방식 적용 */
+  font-size: clamp(22px, 2vw, 32px);
+  margin-bottom: 16px;
+  color: #37517e;
+}
+
+.about-content.about-skills .about-text > p {
+  /* 수정: Skills 설명 텍스트 크기 유지 */
+  font-size: clamp(15px, 1.05vw, 18px);
+  color: #848484;
+  margin-top: -6px;
+  margin-bottom: 16px;
+  word-break: keep-all;
+}
+
+/* Skills Bars */
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 10px;
+}
+
+.skill-box {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  box-shadow: none;
+  transition: none;
+  align-self: stretch;
+}
+
+.skill-box h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 6px;
+  padding-left: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2b2b2b;
+}
+
+.skill-box h3 .val {
+  font-weight: 700;
+  color: #2b2b2b;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 10px; /* 바 크기 유지 */
+  background-color: #e9edf3;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  margin-left: 0;
+}
+
+.skill-bar span {
+  display: block;
+  height: 100%;
+  background-color: #37517e;
+  border-radius: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fillBar 2s cubic-bezier(0.1, 1, 0.1, 1) forwards;
+  animation-delay: 4.8s;
+}
+
+@keyframes fillBar {
+  to { transform: scaleX(1); }
+}
+
+/* Skills 아래 여백 제거 */
+.about.section,
+#about {
+  padding-bottom: 0 !important;
+}
+
+/* =========================
+   Media Queries
+========================= */
+@media (max-width: 1200px) {
+  .about-content.about-main,
+  .about-whyus-flex,
+  .about-content.about-skills {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .about-left,
+  .about-right,
+  .whyus-left-container,
+  .about-content.about-skills .about-text {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .about-whyus-flex .about-image,
+  .about-content.about-skills .about-image {
+    order: -1 !important;
+    margin-bottom: 30px;
+    max-width: 450px !important;
+  }
+  .about-whyus,
+  .about-content.about-skills {
+    padding: 40px 20px !important;
+  }
+  .main-text-left,
+  .main-text-right,
+  .about-list li {
+    font-size: 16px !important;
+  }
+  .whyus-left-container h3 {
+    font-size: 26px !important;
+  }
+  .whyus-left-container > p,
+  .whyus-item summary {
+    font-size: 16px !important;
+  }
+  .whyus-item p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* Tablet / Mobile Mode */
+#mode-tablet:checked ~ .page-wrapper .about-whyus-flex,
+#mode-mobile:checked ~ .page-wrapper .about-whyus-flex,
+#mode-tablet:checked ~ .page-wrapper .about-content.about-skills,
+#mode-mobile:checked ~ .page-wrapper .about-content.about-skills {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 40px 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* 내부 이미지와 텍스트 폭 강제 조정 */
+#mode-tablet:checked ~ .page-wrapper .about-whyus-flex .about-image,
+#mode-mobile:checked ~ .page-wrapper .about-whyus-flex .about-image,
+#mode-tablet:checked ~ .page-wrapper .about-content.about-skills .about-image,
+#mode-mobile:checked ~ .page-wrapper .about-content.about-skills .about-image {
+  width: 100% !important;
+  max-width: 450px !important;
+  margin: 0 auto 20px auto !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .about-whyus-flex .about-image,
+#mode-mobile:checked ~ .page-wrapper .about-content.about-skills .about-image {
+  max-width: 320px !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .whyus-left-container,
+#mode-mobile:checked ~ .page-wrapper .about-content.about-skills .about-text {
+  order: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .whyus-left-container h3,
+#mode-mobile:checked ~ .page-wrapper .about-content.about-skills .about-text h3 {
+  font-size: 22px !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .whyus-left-container > p,
+#mode-mobile:checked ~ .page-wrapper .about-content.about-skills .about-text > p,
+#mode-mobile:checked ~ .page-wrapper .whyus-item summary {
+  font-size: 15px !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .whyus-item p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
+#mode-mobile:checked ~ .page-wrapper .skill-bar {
+  height: 7px !important;
 }

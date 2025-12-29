@@ -267,51 +267,48 @@
         margin-bottom: 0;
     }
 }
-/* --------------------------------------------------------------
-# [수정됨] 강력한 스크롤 애니메이션 (Scroll-driven Animations)
--------------------------------------------------------------- */
 
-/* --------------------------------------------------------------
-# JS 없는 스크롤 애니메이션 (최종 완성본)
--------------------------------------------------------------- */
+/* =========================================
+   [Pure CSS] No-JS 스크롤 애니메이션
+   ========================================= */
 
-/* 1. [Fade Up] 아래에서 위로 올라오는 효과 */
-@keyframes scrollSlideUp {
-    0% {
+/* 1. 움직임 정의 (아래 100px에서 제자리로) */
+@keyframes fadeInUpPure {
+    from {
         opacity: 0;
-        transform: translateY(100px); /* 아래에서 시작 */
+        transform: translate3d(0, 100px, 0); /* 아래에서 시작 */
     }
-    100% {
+    to {
         opacity: 1;
-        transform: translateY(0);     /* 제자리 */
+        transform: translate3d(0, 0, 0);    /* 제자리 */
     }
 }
 
+/* 2. 애니메이션 실행 클래스 */
 .scroll-animate {
-    animation: scrollSlideUp linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%; /* 화면 닿자마자 시작 */
-}
+    /* 애니메이션 설정 (선형, 양방향 유지) */
+    animation: fadeInUpPure linear both;
 
-/* 2. [Zoom Out] 이미지가 커졌다가 작아지며 등장하는 효과 */
-@keyframes scrollZoomOut {
-    0% {
-        opacity: 0;
-        transform: scale(1.2); /* 1.2배 큰 상태에서 시작 */
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);   /* 원래 크기로 */
-    }
-}
-
-.scroll-zoom {
-    animation: scrollZoomOut linear both;
+    /* [핵심] 스크롤 타임라인 (JS 없이 스크롤 감지) */
     animation-timeline: view();
+
+    /* [범위 설정] 
+       entry 0% : 요소 머리가 화면 맨 아래 닿자마자 시작
+       cover 30% : 요소가 화면의 30% 지점까지만 와도 애니메이션 끝!
+       -> 이렇게 짧게 잡아야 "스위치 켜진 듯" 빠르게 올라옵니다. */
     animation-range: entry 0% cover 30%;
 }
 
-/* 3. 딜레이 (순서) 설정 */
-.delay-100 { animation-range: entry 5% cover 35%; }
-.delay-200 { animation-range: entry 10% cover 40%; }
-.delay-300 { animation-range: entry 15% cover 45%; }
+/* 3. 순서 딜레이 (애니메이션 시작 지점을 뒤로 미룸) */
+/* 숫자가 클수록 화면 더 안쪽으로 들어와야 시작됨 */
+.delay-100 {
+    animation-range: entry 5% cover 35%;
+}
+
+.delay-200 {
+    animation-range: entry 10% cover 40%;
+}
+
+.delay-300 {
+    animation-range: entry 15% cover 45%;
+}

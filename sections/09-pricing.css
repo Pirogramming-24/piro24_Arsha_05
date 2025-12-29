@@ -1,4 +1,34 @@
+@keyframes titleUpFade {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
+@keyframes popCenter {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+#pricing .section-title,
+#pricing .pricing-box {
+  opacity: 0;
+}
+
+#pricing .section-title {
+  animation: titleUpFade 0.9s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 55% cover 60%;
+}
+
+#pricing .pricing-box {
+  transform-origin: center;
+  animation: popCenter 0.2s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 60% cover 64%;
+}
+
+#pricing .pricing-grid > .pricing-box:nth-child(1) { animation-range: entry 38% cover 42%; }
+#pricing .pricing-grid > .pricing-box:nth-child(2) { animation-range: entry 42% cover 46%; }
+#pricing .pricing-grid > .pricing-box:nth-child(3) { animation-range: entry 46% cover 50%; }
 
 .pricing {
     background-color: #f5f6f8;
@@ -13,8 +43,8 @@
 }
 
 .pricing .section-title{
-    margin: 0 0 40px;
     padding: 0 12px 60px;
+    
 }
 
 .pricing .section-title h2{

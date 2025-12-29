@@ -1,108 +1,286 @@
-/* Contact Section Styles */
+/* Contact 섹션 기본 스타일 */
 .contact {
-    padding: 80px 0;
+    padding: 60px 0;
+    background: #fff;
 }
 
 .contact .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
+/* 전체 레이아웃 (좌우 배치) */
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
-    margin-top: 50px;
+    display: flex;
+    gap: 30px; /* 박스 사이 간격 */
 }
 
+/* 1. 왼쪽: 정보 & 지도 박스 */
 .contact-info {
+    flex: 1; /* 비율 1 */
+    background: #fff;
+    border-top: 3px solid #3facd6; /* 상단 파란선 */
+    border-bottom: 3px solid #3facd6; /* 하단 파란선 */
+    padding: 30px;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12); /* 그림자 */
     display: flex;
     flex-direction: column;
-    gap: 25px;
 }
 
+/* 개별 정보 아이템 (주소, 전화, 이메일) */
 .info-box {
-    background: #f3f5fa;
-    padding: 25px;
-    border-radius: 5px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px; /* 아이템 간격 */
 }
 
+/* =========================================
+   [수정됨] 아이콘 스타일 분리 시작
+   ========================================= */
+
+/* 공통 아이콘 래퍼 설정 */
+.info-box .icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.info-box .icon-wrapper img {
+    width: 20px;
+    height: 20px;
+    transition: filter 0.3s;
+}
+
+/* ----------------------------------
+   Type A: 위치 (Location) 
+   - 배경: 연한 하늘색
+   - 아이콘: 진한 하늘색 (#3facd6)
+   ---------------------------------- */
+.location-box .icon-wrapper {
+    background: #eef7fc;
+}
+
+.location-box .icon-wrapper img {
+    /* 하늘색(#3facd6) 필터 */
+    filter: invert(76%) sepia(19%) saturate(1633%) hue-rotate(168deg) brightness(96%) contrast(94%);
+}
+
+/* 위치 호버 효과: 배경 진해지고 아이콘 흰색 */
+.location-box:hover .icon-wrapper {
+    background: #47B2E4;
+}
+
+.location-box:hover .icon-wrapper img {
+    filter: brightness(0) invert(1);
+}
+
+/* ----------------------------------
+   Type B: 나머지 (Email, Call) - Common
+   - 배경: 진한 하늘색 (#3facd6) - 아이콘이 잘 보이게 진하게 설정
+   - 아이콘: 밝은 민트색 (#BDFFFF)
+   ---------------------------------- */
+.common-box .icon-wrapper {
+    background: #EEF7FC;
+}
+
+.common-box .icon-wrapper img {
+    /* 밝은 민트색(#BDFFFF) 필터 */
+    filter: invert(36%) sepia(19%) saturate(1633%) hue-rotate(168deg) brightness(96%) contrast(94%);
+}
+
+.info-box:hover .icon-wrapper img {
+    /* 아이콘을 흰색으로 변경 */
+    filter: brightness(0) invert(1);
+}
+
+/* 나머지 호버 효과: 배경이 더 어두워짐 */
+.common-box:hover .icon-wrapper {
+    background: #47B2E4;
+}
+
+/* =========================================
+   아이콘 스타일 분리 끝
+   ========================================= */
+
+/* 텍스트 스타일 */
 .info-box h4 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #37517e;
-    margin-bottom: 10px;
+    font-size: 20px;
+    color: #38517E;
+    font-weight: 600;
+    margin: 0 0 5px 0;
 }
 
 .info-box p {
-    font-size: 15px;
-    color: #848484;
-    line-height: 1.8;
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+    line-height: 1.5;
 }
 
+/* 지도 컨테이너 (iframe 감싸는 박스) */
+.map-container {
+    width: 100%;
+    height: 250px; /* 지도 높이 설정 */
+    border: 0;
+    margin-top: auto; /* 내용이 적어도 지도를 바닥으로 밀어줌 (선택사항) */
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 2. 오른쪽: 폼 박스 */
 .contact-form {
+    flex: 1.5; /* 오른쪽을 더 넓게 (1.5배) */
     background: #fff;
+    border-top: 3px solid #3facd6;
+    border-bottom: 3px solid #3facd6;
+    padding: 30px;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
+/* 폼 내부 레이아웃 */
 .contact-form form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    gap: 20px; /* 이름과 이메일 사이 간격 */
+    margin-bottom: 20px;
 }
 
+.form-group {
+    flex: 1; /* 반반 차지 */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* 아래 요소와 간격 */
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+/* 라벨 스타일 */
+.contact-form label {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* 인풋창 스타일 */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #e9ecef;
+    padding: 10px 15px;
+    border: 1px solid #dfe3ea;
     border-radius: 4px;
-    font-size: 15px;
-    color: #37517e;
-    transition: border-color 0.3s;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+    font-family: inherit; /* 폰트 상속 */
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    outline: none;
-    border-color: #47b2e4;
+    border-color:#47b2e4; /* 포커스 시 파란색 */
 }
 
+/* textarea 높이 */
 .contact-form textarea {
-    resize: vertical;
-    min-height: 100px;
+    height: 150px;
+    resize: none; /* 크기 조절 방지 */
 }
 
+/* 전송 버튼 */
 .btn-submit {
-    background: #47b2e4;
+    background:#47b2e4;
+    border: 0;
+    padding: 10px 30px;
     color: #fff;
-    padding: 12px 40px;
+    transition: 0.4s;
     border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
     font-weight: 600;
-    font-size: 15px;
-    align-self: flex-start;
-    transition: background 0.3s;
+    margin-top: 10px;
+    display: inline-block;
 }
 
+/* [수정됨] 마우스를 올렸을 때 밝아지는 효과 */
 .btn-submit:hover {
-    background: #209dd8;
+    /* 기존: background: #2c8cb3; (진한 색) */
+    
+    /* 수정: 기본색(#3facd6)보다 밝은 색으로 변경 */
+    background: #75C6EB; 
+    
 }
 
-@media (max-width: 992px) {
+/* 반응형 (모바일) */
+@media (max-width: 768px) {
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        flex-direction: column; /* 위아래 배치 */
+    }
+
+    .form-row {
+        flex-direction: column; /* 이름/이메일 위아래 배치 */
+        gap: 0;
     }
 }
 
-@media (max-width: 576px) {
-    .form-row {
-        grid-template-columns: 1fr;
+/* --------------------------------------------------------------
+# [수정됨] 강력한 스크롤 애니메이션 (Scroll-driven Animations)
+-------------------------------------------------------------- */
+
+/* 1. 움직임 정의: 더 확실하게 아래에서 올라오도록 수정 */
+@keyframes scrollSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(150px); /* 50px -> 150px로 이동 거리 대폭 증가 */
     }
+    100% {
+        opacity: 1;
+        transform: translateY(0);     /* 제자리로 */
+    }
+}
+
+/* 2. 애니메이션 실행 클래스 */
+.scroll-animate {
+    /* 이름 / 속도(linear) / fill-mode(both: 시작 전과 끝난 후 상태 유지) */
+    animation: scrollSlideUp linear both;
+
+    /* 뷰포트(화면) 감지 */
+    animation-timeline: view();
+
+    /* [핵심 수정] 애니메이션 실행 범위 (Range)
+       entry 0% : 요소의 머리가 화면 맨 아래 닿자마자 시작
+       cover 30% : 요소가 화면의 30% 지점까지 올라오면 애니메이션 완료 
+       -> 이렇게 하면 스크롤을 조금만 내려도 바로 올라오는 게 보입니다. */
+    animation-range: entry 0% cover 30%;
+}
+
+/* 3. 딜레이 설정 (순차적으로 올라오는 느낌) */
+/* margin-top을 살짝 줘서 물리적인 시작 위치를 다르게 보이게 하는 트릭 */
+
+.delay-100 {
+    animation-range: entry 5% cover 35%; /* 조금 더 늦게 시작 */
+}
+
+.delay-200 {
+    animation-range: entry 10% cover 40%; /* 더 늦게 시작 */
+}
+
+.delay-300 {
+    animation-range: entry 15% cover 45%; /* 가장 늦게 시작 */
 }

@@ -208,5 +208,10 @@
   .faq-list{
     max-width: 100%;
   }
-  
+}  
+
+@media (max-width: 1199px) {
+  section, .section {
+    scroll-margin-top: 66px;
+  }
 }

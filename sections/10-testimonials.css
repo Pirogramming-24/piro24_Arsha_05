@@ -147,3 +147,14 @@
   100% { transform: translateX(-500%); } 
 }
 
+@media (max-width: 1199px) {
+    .section {
+        scroll-margin-top: 66px;
+    }
+}
+
+@media (min-width: 576px) {
+    .container{
+        max-width: 540px;
+    }
+}

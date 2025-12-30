@@ -3,10 +3,9 @@
 .cta {
   position: relative;
   padding: 120px 0;
-  clip-path: inset(0);
 
   background:
-    linear-gradient(0deg, rgba(40, 58, 90, 0.63), rgba(40, 58, 90, 0.63)),
+    linear-gradient(0deg, rgba(40, 58, 90, 0.8), rgba(40, 58, 90, 0.8)),
     url("../images/call_to_action/bg-8.webp") center center no-repeat;
   background-size: cover;
 }
@@ -78,20 +77,4 @@
   .cta .btn-cta {
     margin-top: 8px;
   }
-}
-
-/* BootstrapMade preview 전용(main branch에 merge시 삭제) */
-#mode-tablet:checked ~ .page-wrapper #cta .cta-content,
-#mode-mobile:checked ~ .page-wrapper #cta .cta-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    row-gap: 20px;
-}
-
-#mode-tablet:checked ~ .page-wrapper #cta .btn-cta,
-#mode-mobile:checked ~ .page-wrapper #cta .btn-cta {
-    margin-top: 8px;
 }

@@ -215,3 +215,13 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (min-width: 1200px) {
+  .portfolio .container {
+    max-width: 1320px;   /* 더 넓게 쓰고 싶으면 1400 같은 값으로 올려도 됨 */
+  }
+}
+
+.portfolio .portfolio-grid {
+  width: 100%;
+}

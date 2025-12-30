@@ -197,7 +197,38 @@
 
 
 /* =====================================
-   Why Us Section
+    Why Us Section
+===================================== */
+.about-whyus {
+  background: #F5F6F8;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 4vw 6vw;
+  padding-top: 3.8vw;
+  padding-bottom: 3.8vw;
+  margin-top: 5vw;
+  margin-bottom: 0;
+  min-height: 60vh;
+  box-sizing: border-box;
+}
+
+.about-whyus .container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.about-whyus-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3%;
+}
+
+/* =====================================
+    Why Us Section - Fixed Version
 ===================================== */
 .about-whyus {
   background: #F5F6F8;
@@ -234,17 +265,13 @@
   display: flex;
   flex-direction: column;
   gap: 1.1vw;
-
   opacity: 0;
-
   animation: slideUpFade linear forwards;
   animation-timeline: view();
   animation-range: entry 20% entry 65%;
 }
 
-
 .whyus-left-container h3 {
-  /* 수정: Why Us 제목 크기 고정 방식 적용 */
   font-size: clamp(22px, 2vw, 32px);
   font-weight: 700;
   color: #37517e;
@@ -252,19 +279,27 @@
   line-height: 1.25;
   max-width: 700px;
   word-break: keep-all;
+  text-align: left !important; /* 강제 왼쪽 정렬 */
 }
 
 .whyus-left-container h3 span {
   font-weight: 400;
 }
 
-.whyus-left-container > p {
-  /* 수정: 설명 텍스트 크기 유지 */
+/* [긴급 수정] 설명글을 무조건 왼쪽 끝으로 당김 */
+.whyus-left-container p {
   font-size: clamp(15px, 1.05vw, 18px);
   color: #848484;
   line-height: 1.8;
-  margin: 0;
   max-width: 740px;
+
+  /* 강제 정렬 설정 */
+  display: block !important;
+  text-align: left !important;
+  margin-left: 0 !important;   /* 왼쪽 여백 강제 제거 */
+  margin-right: auto !important;
+  padding-left: 0 !important;  /* 왼쪽 패딩 강제 제거 */
+  transform: translateX(0) !important; /* 혹시 모를 이동 효과 제거 */
 }
 
 /* Toggle container */

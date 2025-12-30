@@ -1,0 +1,175 @@
+/* =====================================================
+   Services Section – Scroll Animation
+===================================================== */
+
+/* 1. 키프레임 정의 */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. 기본 상태 (숨김) */
+.services .section-title,
+.services-grid > .service-item {
+    opacity: 0;
+}
+
+/* 3. 스크롤 연동 애니메이션 */
+.services .section-title,
+.services-grid > .service-item {
+    animation-name: slideUpFade;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+
+    /* 스크롤 기준 애니메이션 */
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+/* 4. 제목 → 카드 순차 등장 */
+.services .section-title {
+    animation-range: entry 0% cover 25%;
+}
+
+.services-grid > .service-item:nth-child(1) {
+    animation-range: entry 10% cover 35%;
+}
+
+.services-grid > .service-item:nth-child(2) {
+    animation-range: entry 20% cover 45%;
+}
+
+.services-grid > .service-item:nth-child(3) {
+    animation-range: entry 30% cover 55%;
+}
+
+.services-grid > .service-item:nth-child(4) {
+    animation-range: entry 40% cover 65%;
+}
+
+/* =====================================================
+   Services Section Styles
+===================================================== */
+
+.services {
+    padding: 80px 0;
+    background: #F5F6F8;
+}
+
+.services .container {
+    max-width: 1330px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.services .section-title {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.services .section-title p {
+    color: #444444;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* 실제 상호작용 박스 */
+.service-box {
+    background: #fff;
+    padding: 55px 35px;
+    border-radius: 0;
+
+    /* hover 전용 transform */
+    transform: translateY(0);
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.4s ease;
+
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    width: 100%;
+    height: 100%;
+}
+
+/* hover 효과 */
+.service-box:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    margin-bottom: 12px;
+}
+
+.service-icon img {
+    width: 45px;
+    height: auto;
+}
+
+.service-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #37517e;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+    word-break: keep-all;
+}
+
+.service-box:hover h4 {
+    color: #47b2e4;
+}
+
+.service-box p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #444444;
+    margin: 0;
+    word-break: normal;
+    overflow-wrap: break-word;
+    letter-spacing: -0.2px;
+}
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
+   Fallback (스크롤 타임라인 미지원 브라우저)
+===================================================== */
+@supports not (animation-timeline: view()) {
+    .services .section-title,
+    .services-grid > .service-item {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}

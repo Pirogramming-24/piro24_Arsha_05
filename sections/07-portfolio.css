@@ -1,0 +1,227 @@
+/* Portfolio Section */
+
+.portfolio {
+  padding: 60px 0;
+}
+
+.portfolio .section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.portfolio .portfolio-controls {
+  margin-top: 10px;
+}
+
+.portfolio .portfolio-controls input[type="radio"] {
+  display: none;
+}
+
+.portfolio .portfolio-filters {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.portfolio .filter-btn {
+  display: inline-block;
+  padding: 8px 20px 10px 20px;
+  margin: 0 4px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+  color: var(--default-color);
+}
+
+.portfolio .filter-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.portfolio:has(#filter-all:checked)  label[for="filter-all"],
+.portfolio:has(#filter-app:checked)  label[for="filter-app"],
+.portfolio:has(#filter-card:checked) label[for="filter-card"],
+.portfolio:has(#filter-web:checked)  label[for="filter-web"] {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+
+.portfolio .portfolio-grid {
+  display: flex;
+  gap: 30px;          
+}
+
+.portfolio .portfolio-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;           
+}
+
+.portfolio .portfolio-item {
+  position: relative;
+}
+
+
+.portfolio .portfolio-wrap {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0;       
+}
+
+.portfolio .portfolio-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s;
+}
+
+
+.portfolio .portfolio-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -100%;       
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.96);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  opacity: 0;
+  transition: all 0.35s ease;
+  box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  bottom: 0;
+  opacity: 1;
+}
+
+.portfolio .portfolio-text h4 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.portfolio .portfolio-text p {
+  margin: 0;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+
+.portfolio .portfolio-links {
+  display: flex;
+  gap: 16px;
+}
+
+.portfolio .portfolio-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.portfolio .portfolio-links img {
+  width: 26px;
+  height: 26px;
+  filter: invert(42%) sepia(8%) saturate(503%)
+          hue-rotate(171deg) brightness(88%) contrast(88%);
+  transition: filter 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+}
+
+.portfolio .portfolio-links a:hover img {
+  filter: invert(52%) sepia(91%) saturate(1025%)
+          hue-rotate(186deg) brightness(102%) contrast(101%);
+}
+
+.grid-all {
+  display: flex;
+}
+
+.grid-balanced {
+  display: none;
+}
+
+#filter-all:checked ~ .grid-all {
+  display: flex;
+}
+#filter-all:checked ~ .grid-balanced {
+  display: none;
+}
+
+#filter-app:checked ~ .grid-all,
+#filter-card:checked ~ .grid-all,
+#filter-web:checked ~ .grid-all {
+  display: none;
+}
+
+#filter-app:checked ~ .grid-balanced,
+#filter-card:checked ~ .grid-balanced,
+#filter-web:checked ~ .grid-balanced {
+  display: flex;
+}
+
+#filter-app:checked
+  ~ .grid-balanced .portfolio-item {
+  display: none;
+}
+#filter-app:checked
+  ~ .grid-balanced .portfolio-item.app {
+  display: block;
+}
+
+#filter-card:checked
+  ~ .grid-balanced .portfolio-item {
+  display: none;
+}
+#filter-card:checked
+  ~ .grid-balanced .portfolio-item.card {
+  display: block;
+}
+
+#filter-web:checked
+  ~ .grid-balanced .portfolio-item {
+  display: none;
+}
+#filter-web:checked
+  ~ .grid-balanced .portfolio-item.web {
+  display: block;
+}
+
+@media (max-width: 992px) {
+
+  .portfolio .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .portfolio .portfolio-column {
+    display: contents;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .portfolio .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio .container {
+    max-width: 1320px;   /* 더 넓게 쓰고 싶으면 1400 같은 값으로 올려도 됨 */
+  }
+}
+
+.portfolio .portfolio-grid {
+  width: 100%;
+}

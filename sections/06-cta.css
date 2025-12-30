@@ -1,0 +1,80 @@
+/* Call To Action(cta) Section Styles */
+
+.cta {
+  position: relative;
+  padding: 120px 0;
+
+  background:
+    linear-gradient(0deg, rgba(40, 58, 90, 0.8), rgba(40, 58, 90, 0.8)),
+    url("../images/call_to_action/bg-8.webp") center center no-repeat;
+  background-size: cover;
+}
+
+.cta .container {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 160px;
+}
+
+.cta-text {
+  flex: 0 0 70%;
+  max-width: 1280px;
+}
+
+.cta-text h3 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: rgba(255,255,255,0.97);
+}
+
+.cta-text p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 0;
+}
+
+.cta .btn-cta {
+  font-size: 16px;
+  padding: 12px 40px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+  white-space: nowrap;
+  transition: 0.5s;
+  flex-shrink: 0;
+}
+
+.cta .btn-cta:hover {
+  background: #47b2e4;
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 20px;
+  }
+
+  .cta-text {
+    max-width: 100%;
+  }
+
+  .cta .btn-cta {
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,181 @@
+/* Clients Section Styles */
+.clients {
+    background: #f3f5fa;
+    padding: 12px 0;
+}
+
+.clients .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* 1400px 이상: container 1320px */
+@media (min-width: 1400px) {
+    .clients .container {
+        max-width: 1320px;
+    }
+}
+
+.clients-wrapper {
+    width: 100%; 
+    overflow: hidden;
+}
+
+.clients-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f5fa;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.client-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.client-logo img:hover {
+    transform: scale(1.1);
+}
+
+/* 1400px 이상: 높이 80, 이미지 6개, 116*36, 가로 패딩 10 */
+@media (min-width: 1400px) {
+    .clients-grid {
+        gap: 30px;
+        margin: 0 40px;
+    }
+
+    .client-logo {
+        width: 116px;
+        height: 36px;
+        padding: 0 10px;
+    }
+}
+
+/* 1200px 이상: 높이 70, 이미지 6개, 86*24.75, 가로 패딩 10 */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .clients-grid {
+        gap: 30px;
+        margin: 0 40px;
+    }
+
+    .client-logo {
+        width: 86px;
+        height: 24.75px;
+        padding: 0 10px;
+    }
+}
+
+/* 1000px 이상: 높이 70, 이미지 5개, 90*26, 가로 패딩 12 */
+@media (min-width: 1000px) and (max-width: 1199px) {
+    .clients-grid {
+        gap: 30px;
+        margin: 0 40px;
+    }
+
+    .client-logo {
+        width: 90px;
+        height: 26px;
+        padding: 0 12px;
+    }
+
+    .client-logo:nth-child(n+6) {
+        display: none;
+    }
+}
+
+/* 768px 이상: 높이 80, 이미지 4개, 116*36, 가로 패딩 10 */
+@media (min-width: 768px) and (max-width: 999px) {
+    .clients-grid {
+        gap: 30px;
+        margin: 0 40px;
+    }
+
+    .client-logo {
+        width: 116px;
+        height: 36px;
+        padding: 0 10px;
+    }
+
+    .client-logo:nth-child(n+5) {
+        display: none;
+    }
+}
+
+/* 580px 이상: 높이 80, 이미지 3개, 116*36, 가로 패딩 10 */
+@media (min-width: 580px) and (max-width: 767px) {
+    .clients-grid {
+        gap: 30px;
+        margin: 0 40px;
+    }
+
+    .client-logo {
+        width: 116px;
+        height: 36px;
+        padding: 0 10px;
+    }
+
+    .client-logo:nth-child(n+4) {
+        display: none;
+    }
+}
+
+/* 580px 미만: 2개 */
+@media (max-width: 579px) {
+    .clients-grid {
+        gap: 20px;
+        margin: 0 40px;
+    }
+
+    .client-logo {
+        width: calc(50% - 10px);
+        height: 60px;
+        padding: 0 12px;
+    }
+
+    .client-logo:nth-child(n+3) {
+        display: none;
+    }
+}
+
+/* Demo Mode - Tablet */
+#mode-tablet:checked ~ .page-wrapper .clients-grid {
+    gap: 30px;
+    margin: 0 40px;
+}
+
+#mode-tablet:checked ~ .page-wrapper .client-logo {
+    width: 116px;
+    height: 36px;
+    padding: 0 10px;
+}
+
+#mode-tablet:checked ~ .page-wrapper .client-logo:nth-child(n+5) {
+    display: none;
+}
+
+/* Demo Mode - Mobile */
+#mode-mobile:checked ~ .page-wrapper .clients-grid {
+    gap: 20px;
+    margin: 0 40px;
+}
+
+#mode-mobile:checked ~ .page-wrapper .client-logo {
+    width: calc(50% - 10px);
+    height: 60px;
+    padding: 0 12px;
+}
+
+#mode-mobile:checked ~ .page-wrapper .client-logo:nth-child(n+3) {
+    display: none;
+}
